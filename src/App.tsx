@@ -3,6 +3,7 @@ import classes from "./App.module.scss";
 import { Suspense, useState } from "react";
 import { RotatingMesh } from "./rotation";
 import SliderControl from "./SliderControl";
+import { ContactShadows } from "@react-three/drei";
 
 enum Scalars {
   RadiusTop,
@@ -48,6 +49,7 @@ const App = () => {
         <color attach="background" args={["#4b4c52"]} />
         <ambientLight intensity={0.1} />
         <directionalLight position={[0, 10, 10]} intensity={2} color="white" />
+        <pointLight position={[0, 10, 10]} intensity={2} color="white" />
         <directionalLight
           position={[0, -10, -10]}
           intensity={1}
@@ -78,13 +80,13 @@ const App = () => {
       <SliderControl
         value={cylinder[Scalars.RadiusBottom]}
         onChange={handleRadiusChange}
-        options={{ ariaLabel: "Radius" }}
+        options={{ ariaLabel: "Radius (cm)" }}
       />
 
       <SliderControl
         value={cylinder[Scalars.Length]}
         onChange={handleLengthChange}
-        options={{ ariaLabel: "Length" }}
+        options={{ ariaLabel: "Length (cm)" }}
       />
     </div>
   );
