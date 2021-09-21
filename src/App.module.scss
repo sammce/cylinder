@@ -1,0 +1,13 @@
+.main {
+  height: 60vh;
+  width: 100%;
+}
+.output {
+  text-align: center;
+  margin: 0;
+  font-size: 20px;
+
+  & > p {
+    margin: 10px 0 0 0;
+  }
+}
